@@ -1,0 +1,13 @@
+.test_block{
+    width: 250px;
+    height: 400px;
+    bac
+    kground-color: rgb(211, 215, 204);
+}
+SELECT
+  TO_CHAR(TO_DATE(LEVEL, 'MM'), 'Month') AS Month,
+  EXTRACT(DAY FROM LAST_DAY(TO_DATE(LEVEL, 'MM'))) AS Days
+FROM
+  dual
+CONNECT BY
+  LEVEL <= 12;
